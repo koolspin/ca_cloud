@@ -1,13 +1,26 @@
-from flask import render_template
+from flask import render_template, render_template_string
+from flask_user import login_required
 from . import main
 
 @main.route('/')
+@login_required
 def index():
     return '<h1>Hello World!</h1>'
 
-@main.route('/user/<name>')
-def user(name):
+@main.route('/test/<name>')
+@login_required
+def test(name):
     return render_template('user.html', name=name)
+
+@main.route('/hhh')
+def home_page():
+    return render_template_string("""
+        {% extends "base.html" %}
+        {% block content %}
+            <p>{{ url_for('user.logout') }}>
+            <p>{{ url_for('user.login') }}>
+        {% endblock %}
+        """)
 
 # @main.route('/cs_entry', methods=['GET', 'POST'])
 # def cs_entry():
