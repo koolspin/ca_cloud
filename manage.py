@@ -21,9 +21,9 @@ def create():
 # manager.add_command('db', MigrateCommand)
 
 # TODO: Definitely need to move this elsewhere
-@app.route('/')
-def index():
-    return '<h1>Hello World!</h1>'
+# @app.route('/')
+# def index():
+#     return '<h1>Hello World!</h1>'
 
 def db_populate():
     """
