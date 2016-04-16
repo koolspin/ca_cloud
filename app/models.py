@@ -37,15 +37,6 @@ class ControlSystem(db.Model):
     addr2_host = db.Column(db.String(128))
     addr2_cip_port = db.Column(db.Integer)
 
-    def __init__(self, user_id, cs_name, cs_ipid, ssl_flag, addr1_host, addr1_cip_port):
-        self.user_id = user_id
-        self.cs_uuid = str(uuid.uuid4())
-        self.cs_name = cs_name
-        self.cs_ipid = cs_ipid
-        self.ssl_flag = ssl_flag
-        self.addr1_host = addr1_host
-        self.addr1_cip_port = addr1_cip_port
-
     def __repr__(self):
         return '<ControlSystem {0}>'.format(self.cs_name)
 

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="panel panel-default">
+    <div class="panel-heading">Control System List</div>
+    <div class="panel-body">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Hostname</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            {% for cs in cs_collection %}
+                <tr>
+                    <td>{{  cs.cs_name }}</td>
+                    <td>{{  cs.addr1_host }}</td>
+                    <td><button id="E-{{ cs.id }}" class="cresButton">EDIT</button></td>
+                    <td><button id="D-{{ cs.id }}" class="cresButton">DELETE</button></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <button id="E-0" class="cresButton">Add System</button>
+    </div>
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename='cs_list.js') }}"></script>
+{% endblock %}
+
