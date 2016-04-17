@@ -1,5 +1,5 @@
 from flask.ext.wtf import Form
-from wtforms import StringField, IntegerField, BooleanField, PasswordField, SubmitField, HiddenField
+from wtforms import StringField, IntegerField, BooleanField, PasswordField, SubmitField, HiddenField, FileField
 from wtforms.validators import Required, NumberRange
 
 class FormControlSystem(Form):
@@ -20,3 +20,9 @@ class FormCsDelete(Form):
     cs_id = HiddenField()
     name = StringField('System Name')
     submit = SubmitField('Delete')
+
+class FileUpload(Form):
+    cs_id = HiddenField()
+    name = StringField('System Name')
+    zip_file = FileField('Choose SG Project Zip File')
+    submit = SubmitField('Upload')

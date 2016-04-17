@@ -18,6 +18,10 @@ class Config:
     MAIL_USE_SSL = False
     MAIL_USE_TLS = False
 
+    # File upload stuff
+    ALLOWED_EXTENSIONS = set(['zip'])
+    UPLOAD_FOLDER = '/home/colin/uploads'
+
     @staticmethod
     def init_app(app):
         pass

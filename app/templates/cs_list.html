@@ -9,6 +9,7 @@
                     <th>Name</th>
                     <th>Hostname</th>
                     <th>Edit</th>
+                    <th>Upload Project</th>
                     <th>Delete</th>
                 </tr>
             </thead>
@@ -19,6 +20,7 @@
                     <td>{{  cs.cs_name }}</td>
                     <td>{{  cs.addr1_host }}</td>
                     <td><button id="E-{{ cs.id }}" class="cresButton">EDIT</button></td>
+                    <td><button id="U-{{ cs.id }}" class="cresButton">UPLOAD PROJECT</button></td>
                     <td><button id="D-{{ cs.id }}" class="cresButton">DELETE</button></td>
                 </tr>
             {% endfor %}

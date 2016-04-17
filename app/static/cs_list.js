@@ -13,6 +13,11 @@ function clickHandler(e) {
             var newLocation = '/cs_entry/' + csid;
             window.location = newLocation;
         }
+        else if (typ == 'u' || typ == 'U') {
+            // Upload display project
+            var newLocation = '/upload/' + csid;
+            window.location = newLocation;
+        }
         else if (typ == 'd' || typ == 'D') {
             // Delete
             var newLocation = '/cs_delete/' + csid;
